@@ -1,0 +1,93 @@
+# Matplotlib style for AJF thesis
+# based off the work by garrettj403 for "SciencePlots"
+# see: https://github.com/garrettj403/SciencePlots
+
+# Set color cycle: blue, green, yellow, red, violet, gray
+# Original colors from SciencePlots
+# axes.prop_cycle : (cycler('color', ['0C5DA5', '00B945', 'FF9500', 'FF2C00', '845B97', '474747', '9e9e9e']) + cycler('ls', ['-', '--', ':', '-.', '-', '--', '-.']))
+# Using HTML colors of above
+# axes.prop_cycle : (cycler('color', ['royalblue', 'limegreen', 'darkorange', 'red', 'slateblue', 'darkslategray', 'darkgray']) + cycler('ls', ['-', '--', ':', '-.', '-', '--', '-.']))
+axes.prop_cycle : (cycler('color', ['tab:blue', 'tab:orange', 'tab:green', 'tab:red', 'tab:purple', 'tab:brown', 'tab:pink', 'tab:grey', 'tab:olive', 'tab:cyan']) + cycler('ls', ['-', '--', ':', '-.', '-', '--', '-.', '-', '--', ':']))
+
+# Set default figure size
+figure.figsize : 3.5, 2.625
+#figure.dpi : 1200
+
+##---------
+## AXES
+##---------
+axes.titlelocation: center  # alignment of the title: {left, right, center}
+axes.titlesize:     medium    # font size of the axes title
+axes.titleweight:   normal  # font weight of title
+axes.titlecolor:    auto    # color of the axes title, auto falls back to
+                            # text.color as default value
+
+# Set x axis
+xtick.direction : in
+xtick.major.size : 3
+xtick.major.width : 0.5
+xtick.minor.size : 1.5
+xtick.minor.width : 0.5
+xtick.minor.visible : True
+xtick.top : True
+
+# Set y axis
+ytick.direction : in
+ytick.major.size : 3
+ytick.major.width : 0.5
+ytick.minor.size : 1.5
+ytick.minor.width : 0.5
+ytick.minor.visible : True
+ytick.right : True
+
+# Set line widths
+axes.linewidth : 0.5
+lines.linewidth : 1.
+
+# Remove legend frame
+legend.fontsize : medium
+legend.title_fontsize : None
+legend.frameon : False
+legend.framealpha : 1.0
+legend.fancybox : True
+legend.numpoints : 1
+legend.facecolor : white
+legend.edgecolor : gray
+patch.linewidth : 0.5
+
+# Grid lines (disabled by default)
+axes.grid : False
+axes.axisbelow : True
+grid.linestyle : --
+grid.color : k
+grid.alpha : 0.5
+grid.linewidth : 0.5
+
+# Always save as 'tight'
+savefig.bbox : tight
+savefig.pad_inches : 0.05
+# savefig.pad_inches : 0.0
+
+# Use sans serif fonts
+font.family : serif
+font.size : 11.0
+# Use LaTeX for math formatting
+text.usetex : True
+text.latex.preamble : \usepackage{amssymb,amsmath} \usepackage{libertinus} \usepackage{libertinust1math} \usepackage[locale=UK, uncertainty-mode=separate]{siunitx}
+
+axes.formatter.limits : -3, 3
+axes.formatter.use_mathtext : True
+
+## ***************************************************************************
+## * IMAGES                                                                  *
+## ***************************************************************************
+#image.aspect:          equal        # {equal, auto} or a number
+#image.interpolation:   antialiased  # see help(imshow) for options
+image.cmap:            cividis       # A colormap name, gray etc...
+#image.lut:             256          # the size of the colormap lookup table
+#image.origin:          upper        # {lower, upper}
+#image.resample:        True
+#image.composite_image: True  # When True, all the images on a set of axes are
+                              # combined into a single composite image before
+                              # saving a figure as a vector graphics file,
+                              # such as a PDF.

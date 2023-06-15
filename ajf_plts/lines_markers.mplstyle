@@ -1,0 +1,5 @@
+# Set markers (style, color, no lines)
+axes.prop_cycle : (cycler('marker',["o", "^", "s", "P", "D", "v", "X"]) + cycler('color', ['tab:blue', 'tab:orange', 'tab:green', 'tab:red', 'tab:purple', 'tab:brown', 'tab:pink']) + cycler('ls', ['-', '--', ':', '-.', '-', '-.', ':']))
+
+# Set marker size
+lines.markersize : 3
