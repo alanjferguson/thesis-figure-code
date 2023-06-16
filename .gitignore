@@ -165,6 +165,6 @@ chapter_5/temp_data/results.parquet
 chapter_5/LB_v2_results.parquet
 chapter_5/vehicle_loads.parquet
 chapter_5/vehicle_counts.parquet
-./chapter_4/noise_data.parquet
-./chapter_3/wim_data.feather
-./chapter_3/noise_data.pkl
+chapter_4/noise_data.parquet
+chapter_3/wim_data.feather
+chapter_3/noise_data.pkl
