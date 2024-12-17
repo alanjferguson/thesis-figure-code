@@ -627,15 +627,17 @@ class Beam(object):
                 M_lin = M_rot = np.zeros_like(K_lin) # TODO don think we need mass here
             elif type(s) is ColumnSupport:
                 K_lin, K_rot = s.calc_K_mats(self._E[self.node_to_elem(s.beam_node)])
-                C_lin = C_rot = np.zeros_like(K_lin) # TODO implement damping here
+                C_lin = C_rot = np.zeros_like(K_lin) # TODO implement damping here 
+                self.Mg[v_dofs[:,np.newaxis], v_dofs] += s.M_lin
+                self.Mg[r_dofs[:,np.newaxis], r_dofs] += s.M_rot
+
+
                     
             self.Kg[v_dofs[:,np.newaxis], v_dofs] += K_lin
             self.Cg[v_dofs[:,np.newaxis], v_dofs] += C_lin
-            self.Mg[v_dofs[:,np.newaxis], v_dofs] += s.M_lin
             
             self.Kg[r_dofs[:,np.newaxis], r_dofs] += K_rot
             self.Cg[r_dofs[:,np.newaxis], r_dofs] += C_rot
-            self.Mg[r_dofs[:,np.newaxis], r_dofs] += s.M_rot
         
         # apply boundary conditions
         self.Kg = _applyBoundaryCondsMatr(self.Kg,
